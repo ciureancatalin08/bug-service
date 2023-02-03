@@ -11,6 +11,7 @@ import java.util.ArrayList;
 @Setter
 @AllArgsConstructor
 public class UserLoginOutputDatenModel {
+
     private String email;
     private String userName;
     private ArrayList<String> permissions;

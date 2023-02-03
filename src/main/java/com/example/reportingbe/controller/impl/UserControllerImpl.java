@@ -11,17 +11,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/jbugs")
 public class UserControllerImpl implements UserController {
 
     @Autowired
     private UserService userService;
 
 
-    @PostMapping(path = "/login",
+    @PostMapping(path = "/login/auth",
             consumes = MediaType.APPLICATION_JSON,
             produces = MediaType.APPLICATION_JSON
     )

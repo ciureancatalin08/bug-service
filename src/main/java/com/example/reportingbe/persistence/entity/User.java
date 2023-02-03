@@ -5,10 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.relational.core.mapping.Table;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -70,12 +69,11 @@ public class User extends BaseEntity<Long> {
     private int status;
 
 
-//    @ManyToMany(cascade = CascadeType.PERSIST)
-//    @JoinTable(name = "users_roles",
-//            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false),
-//            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false)
-//    )
-//    private List<RoleEntity> roles = new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false))
+    private List<Role> roles = new ArrayList<>();
 
 
 //    @Override

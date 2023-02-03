@@ -20,10 +20,7 @@ import org.springframework.stereotype.Service;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
-import static com.example.reportingbe.core.utils.PermissionEnum.BUG_MANAGEMENT;
 
 
 @Service
@@ -60,8 +57,7 @@ public class UserServiceImpl implements UserService {
 
         if (user != null) {
 
-            ArrayList<String> permissionsAsList = new ArrayList<>();
-//            Set<Permission> permissions = new HashSet<>();
+            //            Set<Permission> permissions = new HashSet<>();
 //            for (Role roleEntity : user.getRoles()) {
 //                for (PermissionEntity permissionEntity : roleEntity.getPermissions()) {po
 //                    permissions.add(permissionEntity);
@@ -73,13 +69,11 @@ public class UserServiceImpl implements UserService {
                     .withClaim("username", user.getUsername())
                     .withArrayClaim("permissions", permissions)
                     .sign(algorithm);
-//            for (PermissionEntity perm : permissions) {
-//                permissionsAsList.add(perm.getType());
-//            }
-            UserLoginOutputDatenModel userOutputDto = new UserLoginOutputDatenModel(result.getEmail(), result.getUsername(), permissionsAsList, jwt);
+
+            ArrayList<String> permissionsAsList = new ArrayList<>(Arrays.asList(permissions));
 
 
-            return userOutputDto;
+            return new UserLoginOutputDatenModel(result.getEmail(), result.getUsername(), permissionsAsList, jwt);
 
 //        } else {
 //            throw new BusinessException(MessageCatalog.USER_INVALID_USERNAME_OR_PASSWORD);
