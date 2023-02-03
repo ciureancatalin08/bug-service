@@ -1,7 +1,6 @@
 package com.example.reportingbe.persistence.dao;
 
 import com.example.reportingbe.persistence.entity.User;
-import org.springframework.stereotype.Repository;
 
 public interface UserDao {
 
@@ -14,4 +13,6 @@ public interface UserDao {
     User createUser(User user);
 
     User getUserById(long userId);
+
+    User getUserByUsername(String username);
 }

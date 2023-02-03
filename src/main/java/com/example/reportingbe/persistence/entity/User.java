@@ -20,7 +20,7 @@ import javax.persistence.NamedQuery;
 
 //        @NamedQuery(name = UserEntity.USER_FIND_ALL, query = "SELECT u from UserEntity u"),
         @NamedQuery(name = User.USER_FIND_BY_ID, query = "SELECT u from User u where u.id = :id"),
-//        @NamedQuery(name = UserEntity.USER_FIND_BY_USERNAME, query = "SELECT u from UserEntity u where u.username = :username"),
+        @NamedQuery(name = User.USER_FIND_BY_USERNAME, query = "SELECT u from User u where u.username = :username"),
 //        @NamedQuery(name = UserEntity.USER_GET_BY_EMAIL, query = "SELECT u from UserEntity u where u.email = :" + UserEntity.EMAIL),
 })
 

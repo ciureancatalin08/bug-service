@@ -55,6 +55,12 @@ public class UserDaoImpl implements UserDao {
                 .getSingleResult();
     }
 
+    public User getUserByUsername(String username) {
+        return em.createNamedQuery(User.USER_FIND_BY_USERNAME, User.class)
+                .setParameter("username", username)
+                .getSingleResult();
+    }
+
     //    public User updateUser(User user) {
 //        em.merge(user);
 //        return user;

@@ -2,14 +2,16 @@ package com.example.reportingbe.controller.impl;
 
 import com.example.reportingbe.controller.UserController;
 import com.example.reportingbe.controller.datamodel.UserDataModel;
+import com.example.reportingbe.controller.datamodel.UserLoginDataModel;
+import com.example.reportingbe.controller.datamodel.UserLoginOutputDatenModel;
 import com.example.reportingbe.core.service.UserService;
-import com.example.reportingbe.core.utils.MessageCatalog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @RestController
 @RequestMapping("/api")
@@ -18,7 +20,19 @@ public class UserControllerImpl implements UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping(path = "users",
+
+    @PostMapping(path = "/login",
+            consumes = MediaType.APPLICATION_JSON,
+            produces = MediaType.APPLICATION_JSON
+    )
+    public ResponseEntity<UserLoginOutputDatenModel> loginUser(@RequestBody UserLoginDataModel userLoginDataModel) {
+
+        UserLoginOutputDatenModel response = userService.authenticateUser(userLoginDataModel);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+
+    @PostMapping(path = "/users",
             consumes = MediaType.APPLICATION_JSON,
             produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<UserDataModel> createUser(@RequestBody UserDataModel user) {
@@ -27,7 +41,7 @@ public class UserControllerImpl implements UserController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("users")
+    @GetMapping("/users")
     public ResponseEntity<UserDataModel> getUserById(@RequestParam("id") long id) {
 
         UserDataModel user = userService.getUserById(id);
