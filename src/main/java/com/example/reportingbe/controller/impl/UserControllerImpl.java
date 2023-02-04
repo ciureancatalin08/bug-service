@@ -34,9 +34,9 @@ public class UserControllerImpl implements UserController {
     @PostMapping(path = "/users",
             consumes = MediaType.APPLICATION_JSON,
             produces = MediaType.APPLICATION_JSON)
-    public ResponseEntity<UserDataModel> createUser(@RequestBody UserDataModel user) {
+    public ResponseEntity<String> createUser(@RequestBody UserDataModel user) {
 
-        UserDataModel response = userService.createUser(user);
+        String response = userService.createUser(user);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 

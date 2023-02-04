@@ -14,13 +14,13 @@ import java.util.List;
 @Getter
 @Setter
 @NamedQueries({
-//        @NamedQuery(name = User.USER_FIND_BY_EMAIL, query = "SELECT count(u) from User u where u.email = :" + UserEntity.EMAIL),
+        @NamedQuery(name = User.USER_FIND_BY_EMAIL, query = "SELECT count(u) from User u where u.email = :" + User.EMAIL),
 //        @NamedQuery(name = UserEntity.USER_COUNT_BY_USERNAME, query = "SELECT count(u) from UserEntity u where u.username = :username"),
 
 //        @NamedQuery(name = UserEntity.USER_FIND_ALL, query = "SELECT u from UserEntity u"),
         @NamedQuery(name = User.USER_FIND_BY_ID, query = "SELECT u from User u where u.id = :id"),
         @NamedQuery(name = User.USER_FIND_BY_USERNAME, query = "SELECT u from User u where u.username = :username"),
-//        @NamedQuery(name = UserEntity.USER_GET_BY_EMAIL, query = "SELECT u from UserEntity u where u.email = :" + UserEntity.EMAIL),
+        @NamedQuery(name = User.USER_GET_BY_EMAIL, query = "SELECT u from User u where u.email = :" + User.EMAIL),
 })
 
 public class User extends BaseEntity<Long> {

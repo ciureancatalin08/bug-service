@@ -6,10 +6,9 @@ import com.example.reportingbe.controller.datamodel.UserDataModel;
 import com.example.reportingbe.controller.datamodel.UserLoginDataModel;
 import com.example.reportingbe.controller.datamodel.UserLoginOutputDatenModel;
 import com.example.reportingbe.core.service.UserService;
-import com.example.reportingbe.persistence.dao.UserDao;
+import com.example.reportingbe.core.utils.MessageCatalog;
+import com.example.reportingbe.core.utils.exceptions.BusinessWebAppException;
 import com.example.reportingbe.persistence.dao.impl.UserDaoImpl;
-import com.example.reportingbe.persistence.entity.Permission;
-import com.example.reportingbe.persistence.entity.Role;
 import com.example.reportingbe.persistence.entity.User;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
@@ -17,10 +16,8 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 
 
 @Service
@@ -29,16 +26,41 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDaoImpl userDao;
 
+    @Autowired
+    private RoleServiceImpl roleService;
+
     private MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
 
     @Override
-    public UserDataModel createUser(UserDataModel userDataModel) {
+    public String createUser(UserDataModel userDataModel) {
 
-        mapperFactory.classMap(UserDataModel.class, User.class);
-        MapperFacade mapper = mapperFactory.getMapperFacade();
-        User user = mapper.map(userDataModel, User.class);
+        if (userDataModel.getFirstName() == null || userDataModel.getEmail() == null || userDataModel.getRoles().isEmpty())
+            throw new BusinessWebAppException(MessageCatalog.USER_FIELDS_MISSING, 400);
 
-        return mapper.map(userDao.createUser(user), UserDataModel.class);
+        if (userDao.emailExists(userDataModel.getEmail()))
+            throw new BusinessWebAppException(MessageCatalog.USER_WITH_SAME_MAIL_EXISTS, 400);
+
+
+        final User newUser = createNewUser(userDataModel);
+
+        newUser.setUsername(userDataModel.getFirstName());
+        newUser.setStatus(1);
+        newUser.setPassword("DEFAULT_PASSWORD");
+
+        try {
+            userDao.createUser(newUser);
+//            final long id = userDao.getUserByUsername(userDataModel.getEmail()).getId();
+//            final String userFullName = newUserEntity.getFirstName() + " " + newUserEntity.getLastName();
+//            this.computationService.sendMail(newUserEntity.getEmail(), newUserEntity.getFirstName(), newUserEntity.getUsername(), newUserEntity.getPassword());
+//            this.notificationFacade.createNotification(
+//                    NotificationType.WELCOME_NEW_USER,
+//                    new NotificationParamsWelcomeUser(userFullName, newUserEntity.getUsername()), id);
+        } catch (Exception e) {
+            throw new BusinessWebAppException(MessageCatalog.USER_INVALID_PATTERN, 400);
+        }
+
+
+        return newUser.getUsername();
     }
 
     @Override
@@ -82,5 +104,22 @@ public class UserServiceImpl implements UserService {
         }
 
         return null;
+    }
+
+    public User createNewUser(UserDataModel userDataModel) {
+
+        final User user = new User();
+        user.setFirstName(userDataModel.getFirstName());
+        user.setLastName(userDataModel.getLastName());
+        user.setEmail(userDataModel.getEmail());
+        user.setMobileNumber(userDataModel.getMobileNumber());
+        user.setRoles(new ArrayList<>());
+
+        if (userDataModel.getRoles() != null && !userDataModel.getRoles().isEmpty()) {
+            user.getRoles().addAll(
+                    roleService.getRolesByTypeList(userDataModel.getRoles()));
+        }
+
+        return user;
     }
 }

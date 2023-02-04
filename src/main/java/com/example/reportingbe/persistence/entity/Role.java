@@ -7,24 +7,16 @@ import java.util.List;
 
 @Entity
 @Table(name = "roles")
-//@NamedQueries({
-//        @NamedQuery(name = RoleEntity.GET_PERMISSIONSANDROLES,
-//                query = "select r from RoleEntity r"),
-//        @NamedQuery(name = RoleEntity.GET_PERMISSIONS,
-//                query = "select r.permissions from RoleEntity r where r.id in :" + RoleEntity.ID_PERM),
-//        @NamedQuery(name = RoleEntity.QUERY_GET_ROLES_BY_TYPE_LIST,
-//                query = "select r from RoleEntity r " + "where r.type in :" + RoleEntity.INPUT_TYPE_LIST),
-//        @NamedQuery(name = RoleEntity.GET_ALL_ROLES_TYPE,
-//                query = "SELECT r.type from RoleEntity r "),
-//        @NamedQuery(name = RoleEntity.QUERY_GET_ROLE_BY_ID,
-//                query = "select r from RoleEntity r "
-//                        + "where r.id = :" + RoleEntity.INPUT_ID)})
+@NamedQueries({
+        @NamedQuery(name = Role.QUERY_GET_ROLES_BY_TYPE_LIST,
+                query = "select r from Role r " + "where r.type in :" + Role.INPUT_TYPE_LIST),
+})
 public class Role extends BaseEntity<Long> {
 
     //    public static final String QUERY_GET_ROLE_BY_ID = "getRoleById";
-//    public static final String QUERY_GET_ROLES_BY_TYPE_LIST = "getRolesByTypeList";
-//    public static final String INPUT_TYPE_LIST = "type";
-//    public static final String INPUT_ID = "id";
+    public static final String QUERY_GET_ROLES_BY_TYPE_LIST = "getRolesByTypeList";
+    public static final String INPUT_TYPE_LIST = "type";
+    //    public static final String INPUT_ID = "id";
 //    public static final String ID_PERM = "id";
 //    public static final String GET_ALL_ROLES_TYPE = "getAllRolesType";
 //    public static final String GET_PERMISSIONS = "getPermissions";

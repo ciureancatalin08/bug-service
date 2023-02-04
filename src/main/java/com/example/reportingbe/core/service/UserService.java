@@ -6,7 +6,7 @@ import com.example.reportingbe.controller.datamodel.UserLoginOutputDatenModel;
 
 public interface UserService {
 
-    UserDataModel createUser(UserDataModel userDataModel);
+    String createUser(UserDataModel userDataModel);
 
     UserDataModel getUserById(long id);
 

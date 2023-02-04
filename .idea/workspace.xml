@@ -2,17 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25df6dd7-1d4a-4a39-adfb-78be32cb1fa3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/PermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/RoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/impl/PermissionDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/impl/RoleDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/datamodel/UserDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/datamodel/UserDataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/datamodel/UserLoginOutputDatenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/datamodel/UserLoginOutputDatenModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/impl/UserControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/impl/UserControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/utils/PermissionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/utils/PermissionEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/entity/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/entity/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/utils/MessageCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/utils/MessageCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/controller/impl/UserControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/controller/impl/UserControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/core/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/core/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/core/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/core/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/core/utils/PermissionEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/core/utils/PermissionEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/Permission.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/Permission.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/Role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +40,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="c" />
         <option value="cataciurean@rocketmail.com &lt;cataciurean@rocketmail.com&gt;" />
       </list>
     </option>
@@ -63,11 +74,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.reportingbe.persistence.dao.impl" />
+      <recent name="com.example.reportingbe.persistence.dao" />
+      <recent name="com.example.reportingbe.core.service.impl" />
+      <recent name="com.example.reportingbe.controller.impl" />
       <recent name="com.example.reportingbe.controller.datamodel" />
-      <recent name="com.example.reportingbe.core.utils" />
-      <recent name="com.example.reportingbe.persistence.entity" />
-      <recent name="com.example.reportingbe" />
-      <recent name="com.example.reportingbe.persistence" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Catalin Ciurean\Desktop\reporting-be\src\main\java\com\example\reportingbe\core\utils" />
@@ -111,7 +122,7 @@
       <workItem from="1674401243802" duration="7560000" />
       <workItem from="1674563896795" duration="12458000" />
       <workItem from="1674922895792" duration="832000" />
-      <workItem from="1675439456857" duration="5767000" />
+      <workItem from="1675439456857" duration="14821000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674911015556</created>
@@ -127,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675442564293</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="authentication teil 2">
+      <created>1675459963735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675459963735</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,26 +154,27 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="authentication teil 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="authentication teil 1" />
+    <MESSAGE value="authentication teil 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="authentication teil 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="354" y="124" key="#Auto_Import" timestamp="1674566803736">
+    <state x="354" y="124" key="#Auto_Import" timestamp="1675513749671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="354" y="124" key="#Auto_Import/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674566803736" />
-    <state x="-1202" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1674921844239">
-      <screen x="-1920" y="52" width="1920" height="1040" />
+    <state x="354" y="124" key="#Auto_Import/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513749671" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1675513960308">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-1202" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1674921844239" />
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674567212517" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513960308" />
     <state x="-1449" y="52" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1674921375881">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
     <state x="-1449" y="52" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1674921375881" />
-    <state x="-1450" y="166" key="CommitChangelistDialog2" timestamp="1675442562584">
+    <state x="-1450" y="166" key="CommitChangelistDialog2" timestamp="1675459962570">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state x="-1450" y="166" key="CommitChangelistDialog2/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675442562584" />
+    <state x="-1450" y="166" key="CommitChangelistDialog2/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459962570" />
     <state x="-1180" y="313" key="FileChooserDialogImpl" timestamp="1674910002339">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
@@ -164,46 +183,46 @@
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
     <state x="-1089" y="465" width="260" height="269" key="Github.ShareDialog/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1674910885983" />
-    <state width="1877" height="142" key="GridCell.Tab.0.bottom" timestamp="1675459131576">
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1675515970827">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state width="1877" height="142" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459131576" />
-    <state width="1493" height="123" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674568196761" />
-    <state width="1877" height="142" key="GridCell.Tab.0.center" timestamp="1675459131575">
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515970827" />
+    <state width="1493" height="317" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513698756" />
+    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1675515970826">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state width="1877" height="142" key="GridCell.Tab.0.center/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459131575" />
-    <state width="1493" height="123" key="GridCell.Tab.0.center/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674568196759" />
-    <state width="1877" height="142" key="GridCell.Tab.0.left" timestamp="1675459131575">
+    <state width="1877" height="264" key="GridCell.Tab.0.center/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515970826" />
+    <state width="1493" height="317" key="GridCell.Tab.0.center/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513698756" />
+    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1675515970826">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state width="1877" height="142" key="GridCell.Tab.0.left/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459131575" />
-    <state width="1493" height="123" key="GridCell.Tab.0.left/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674568196759" />
-    <state width="1877" height="142" key="GridCell.Tab.0.right" timestamp="1675459131575">
+    <state width="1877" height="264" key="GridCell.Tab.0.left/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515970826" />
+    <state width="1493" height="317" key="GridCell.Tab.0.left/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513698756" />
+    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1675515970827">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state width="1877" height="142" key="GridCell.Tab.0.right/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459131575" />
-    <state width="1493" height="123" key="GridCell.Tab.0.right/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674568196760" />
-    <state width="1877" height="142" key="GridCell.Tab.1.bottom" timestamp="1675459131577">
+    <state width="1877" height="264" key="GridCell.Tab.0.right/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515970827" />
+    <state width="1493" height="317" key="GridCell.Tab.0.right/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513698756" />
+    <state width="1877" height="264" key="GridCell.Tab.1.bottom" timestamp="1675515970828">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state width="1877" height="142" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459131577" />
-    <state width="1493" height="123" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674568196763" />
-    <state width="1877" height="142" key="GridCell.Tab.1.center" timestamp="1675459131576">
+    <state width="1877" height="264" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515970828" />
+    <state width="1493" height="317" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513698757" />
+    <state width="1877" height="264" key="GridCell.Tab.1.center" timestamp="1675515970828">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state width="1877" height="142" key="GridCell.Tab.1.center/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459131576" />
-    <state width="1493" height="123" key="GridCell.Tab.1.center/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674568196762" />
-    <state width="1877" height="142" key="GridCell.Tab.1.left" timestamp="1675459131576">
+    <state width="1877" height="264" key="GridCell.Tab.1.center/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515970828" />
+    <state width="1493" height="317" key="GridCell.Tab.1.center/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513698757" />
+    <state width="1877" height="264" key="GridCell.Tab.1.left" timestamp="1675515970828">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state width="1877" height="142" key="GridCell.Tab.1.left/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459131576" />
-    <state width="1493" height="123" key="GridCell.Tab.1.left/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674568196762" />
-    <state width="1877" height="142" key="GridCell.Tab.1.right" timestamp="1675459131576">
+    <state width="1877" height="264" key="GridCell.Tab.1.left/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515970828" />
+    <state width="1493" height="317" key="GridCell.Tab.1.left/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513698757" />
+    <state width="1877" height="264" key="GridCell.Tab.1.right" timestamp="1675515970828">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state width="1877" height="142" key="GridCell.Tab.1.right/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459131576" />
-    <state width="1493" height="123" key="GridCell.Tab.1.right/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674568196763" />
+    <state width="1877" height="264" key="GridCell.Tab.1.right/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515970828" />
+    <state width="1493" height="317" key="GridCell.Tab.1.right/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675513698757" />
     <state width="1877" height="198" key="GridCell.Tab.2.bottom" timestamp="1675457933050">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
@@ -229,10 +248,10 @@
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
     <state x="-1459" y="214" key="SettingsEditor/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1674922852881" />
-    <state x="-1368" y="304" key="Vcs.Push.Dialog.v2" timestamp="1675442666652">
+    <state x="-1462" y="555" key="Vcs.Push.Dialog.v2" timestamp="1675459970699">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state x="-1368" y="304" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675442666652" />
+    <state x="-1462" y="555" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459970699" />
     <state x="-1339" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1675439455951">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
@@ -242,15 +261,19 @@
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
     <state x="-1399" y="307" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675442338441" />
+    <state x="398" y="200" width="1070" height="699" maximized="true" key="dock-window-1" timestamp="1675514630765">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="398" y="200" width="1070" height="699" maximized="true" key="dock-window-1/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675514630765" />
     <state x="-1304" y="266" key="run.anything.popup" timestamp="1675459083169">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
     <state x="-1304" y="266" key="run.anything.popup/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675459083169" />
-    <state x="-1381" y="235" width="840" height="856" key="search.everywhere.popup" timestamp="1674932100967">
+    <state x="-1381" y="235" width="840" height="856" key="search.everywhere.popup" timestamp="1675515951705">
       <screen x="-1920" y="52" width="1920" height="1040" />
     </state>
-    <state x="-1381" y="235" width="840" height="856" key="search.everywhere.popup/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1674932100967" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1674567204202" />
+    <state x="-1381" y="235" width="840" height="856" key="search.everywhere.popup/0.0.1536.824/-1920.52.1920.1040@-1920.52.1920.1040" timestamp="1675515951705" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.52.1920.1040@0.0.1536.824" timestamp="1675514435476" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -262,7 +285,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/UserServiceImpl.java</url>
-          <line>55</line>
+          <line>77</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint type="java-line">

@@ -18,7 +18,7 @@ public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager em;
 
-//    @PersistenceContext(unitName = "persistenceUnit")
+    //    @PersistenceContext(unitName = "persistenceUnit")
 //    private EntityManager em;
 //
 //    /**
@@ -27,12 +27,12 @@ public class UserDaoImpl implements UserDao {
 //     * @param email the email to check for. mandatory
 //     * @return <code>true</code> if the input email is associated with a user.
 //     */
-//    public boolean existsEmail(String email) {
-//        long count = em.createNamedQuery(User.USER_FIND_BY_EMAIL, Long.class)
-//                .setParameter(User.EMAIL, email)
-//                .getSingleResult();
-//        return (count > 0);
-//    }
+    public boolean emailExists(String email) {
+        long count = em.createNamedQuery(User.USER_FIND_BY_EMAIL, Long.class)
+                .setParameter(User.EMAIL, email)
+                .getSingleResult();
+        return (count > 0);
+    }
 
     /**
      * Persists a user entity.
@@ -66,11 +66,11 @@ public class UserDaoImpl implements UserDao {
 //        return user;
 //    }
 //
-//    public User getUserByEmail(String email) {
-//        return em.createNamedQuery(User.USER_GET_BY_EMAIL, User.class)
-//                .setParameter(User.EMAIL, email)
-//                .getSingleResult();
-//    }
+    public User getUserByEmail(String email) {
+        return em.createNamedQuery(User.USER_GET_BY_EMAIL, User.class)
+                .setParameter(User.EMAIL, email)
+                .getSingleResult();
+    }
 //
 //    public boolean usernameExists(String username) {
 //        long count = em.createNamedQuery(User.USER_COUNT_BY_USERNAME, Long.class)
