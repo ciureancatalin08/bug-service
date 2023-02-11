@@ -12,4 +12,6 @@ public interface RoleDao {
 
     List<Role> getRolesByTypeList(final List<String> typeList);
 
+    List<String> getAllRoles();
+
 }

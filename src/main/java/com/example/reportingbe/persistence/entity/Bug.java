@@ -1,18 +1,23 @@
 package com.example.reportingbe.persistence.entity;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "bug")
-//@NamedQueries({
-//        @NamedQuery(name = BugEntity.BUG_GET_ALL,
-//                query = "select b from BugEntity b ORDER BY b.targetDate desc"),
+@NamedQueries({
+        @NamedQuery(name = Bug.BUG_GET_ALL,
+                query = "select b from Bug b ORDER BY b.targetDate desc"),
 //        @NamedQuery(name = BugEntity.BUG_FIND_BY_ID,
 //                query = "select b from BugEntity b where b.id = :id" ),
 //
-//})
+})
 
 public class Bug extends BaseEntity<Long> {
     public static final String BUG_GET_ALL = "BugEntity.getAllBugEntities";

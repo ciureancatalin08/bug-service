@@ -9,6 +9,7 @@ import com.example.reportingbe.core.service.UserService;
 import com.example.reportingbe.core.utils.MessageCatalog;
 import com.example.reportingbe.core.utils.exceptions.BusinessWebAppException;
 import com.example.reportingbe.persistence.dao.impl.UserDaoImpl;
+import com.example.reportingbe.persistence.entity.Role;
 import com.example.reportingbe.persistence.entity.User;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
@@ -18,6 +19,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -104,6 +107,25 @@ public class UserServiceImpl implements UserService {
         }
 
         return null;
+    }
+
+
+    @Override
+    public List<UserDataModel> getAllUsers() {
+
+        mapperFactory.classMap(User.class, UserDataModel.class);
+        MapperFacade mapper = mapperFactory.getMapperFacade();
+
+        List<UserDataModel> usersDataModel = new ArrayList<>();
+        List<User> users = userDao.getAll();
+
+        for (User user : users) {
+
+            UserDataModel userDataModel = mapper.map(user, UserDataModel.class);
+            userDataModel.setRoles(user.getRoles().stream().map(Role::getType).collect(Collectors.toList()));
+            usersDataModel.add(userDataModel);
+        }
+        return usersDataModel;
     }
 
     public User createNewUser(UserDataModel userDataModel) {

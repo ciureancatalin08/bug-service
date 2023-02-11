@@ -15,5 +15,7 @@ public class UserDataModel extends BaseDataModel<Long> {
     private String lastName;
     private String email;
     private String mobileNumber;
+    private String userName;
     private List<String> roles = new ArrayList<>();
+    private int status;
 }

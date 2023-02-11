@@ -3,6 +3,7 @@
 // =================================================================================================
 package com.example.reportingbe.core.service.impl;
 
+import com.example.reportingbe.core.service.RoleService;
 import com.example.reportingbe.persistence.dao.PermissionDao;
 import com.example.reportingbe.persistence.dao.RoleDao;
 import com.example.reportingbe.persistence.entity.Role;
@@ -13,7 +14,7 @@ import java.util.List;
 
 
 @Service
-public class RoleServiceImpl {
+public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private RoleDao roleDao;
@@ -28,9 +29,16 @@ public class RoleServiceImpl {
     @Autowired
     private PermissionDao permissionDao;
 
+    @Override
     public List<Role> getRolesByTypeList(List<String> typeList) {
 
         return roleDao.getRolesByTypeList(typeList);
     }
 
+
+    @Override
+    public List<String> getAllRoles() {
+
+        return roleDao.getAllRoles();
+    }
 }

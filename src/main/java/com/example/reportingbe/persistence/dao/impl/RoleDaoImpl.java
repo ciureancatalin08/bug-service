@@ -25,4 +25,11 @@ public class RoleDaoImpl implements RoleDao {
                 .getResultList();
     }
 
+
+    @Override
+    public List<String> getAllRoles() {
+
+        return em.createNamedQuery(Role.GET_ALL_ROLES_TYPE, String.class)
+                .getResultList();
+    }
 }

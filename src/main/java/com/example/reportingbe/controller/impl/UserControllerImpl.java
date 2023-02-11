@@ -1,6 +1,5 @@
 package com.example.reportingbe.controller.impl;
 
-import com.example.reportingbe.controller.UserController;
 import com.example.reportingbe.controller.datamodel.UserDataModel;
 import com.example.reportingbe.controller.datamodel.UserLoginDataModel;
 import com.example.reportingbe.controller.datamodel.UserLoginOutputDatenModel;
@@ -11,10 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @RestController
 @RequestMapping("/jbugs")
-public class UserControllerImpl implements UserController {
+public class UserControllerImpl {
 
     @Autowired
     private UserService userService;
@@ -31,7 +31,7 @@ public class UserControllerImpl implements UserController {
     }
 
 
-    @PostMapping(path = "/users",
+    @PostMapping(path = "/jbugs-api/users/insert",
             consumes = MediaType.APPLICATION_JSON,
             produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<String> createUser(@RequestBody UserDataModel user) {
@@ -40,12 +40,21 @@ public class UserControllerImpl implements UserController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("/users")
-    public ResponseEntity<UserDataModel> getUserById(@RequestParam("id") long id) {
 
-        UserDataModel user = userService.getUserById(id);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+    @GetMapping("/jbugs-api/users")
+    public ResponseEntity<List<UserDataModel>> getAllUsers() {
+
+        List<UserDataModel> response = userService.getAllUsers();
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+
+//    @GetMapping("/users")
+//    public ResponseEntity<UserDataModel> getUserById(@RequestParam("id") long id) {
+//
+//        UserDataModel user = userService.getUserById(id);
+//        return new ResponseEntity<>(user, HttpStatus.OK);
+//    }
 
 //    @Consumes(MediaType.APPLICATION_JSON)
 //    @PutMapping
@@ -78,15 +87,6 @@ public class UserControllerImpl implements UserController {
 //        return Response.status(Response.Status.FORBIDDEN).build();
 //    }
 //
-//
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @GetMapping
-//    public Response getAll(@Context SecurityContext securityContext) {
-//        if (securityContext.isUserInRole(String.valueOf(PermissionType.USER_MANAGEMENT))) {
-//            return Response.ok(userFacade.getAll()).build();
-//        }
-//        return Response.status(Response.Status.FORBIDDEN).entity(MessageCatalog.PERMISSION_NOT_FOUND).build();
-//    }
 
 
 }

@@ -1,82 +1,52 @@
 package com.example.reportingbe.controller.impl;
 
+import com.example.reportingbe.controller.datamodel.BugDataModel;
 import com.example.reportingbe.core.service.BugService;
+import com.example.reportingbe.core.utils.MessageCatalog;
+import com.example.reportingbe.core.utils.PermissionEnum;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.SecurityContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @RestController
-public class BugControllerImpl implements BugService {
-//
-//    @POST
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public Response createBug(@Context SecurityContext securityContext, BugInputDTO input) {
-////        if (securityContext.isUserInRole(String.valueOf(PermissionType.BUG_MANAGEMENT))) {
-////            facade.createBug(input);
-////            return Response.ok().build();
-////        } else {
-////            return Response.status(Response.Status.FORBIDDEN).entity(MessageCatalog.PERMISSION_NOT_FOUND).build();
-////        }
-//    }
-//
-//    @PUT
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public Response updateBug(@Context SecurityContext securityContext, Bug input) {
-////        if (securityContext.isUserInRole(String.valueOf(PermissionType.BUG_MANAGEMENT))) {
-////            if (securityContext.isUserInRole(String.valueOf(PermissionType.BUG_CLOSE))) {
-////                facade.updateBug(input, StatusUpdate.allStatusValue);
-////            }else{
-////                facade.updateBug(input, StatusUpdate.limitedStatusValue);
-////            }
-////            return Response.ok().build();
-////        } else {
-////            return Response.status(Response.Status.FORBIDDEN).entity(MessageCatalog.PERMISSION_NOT_FOUND).build();
-////        }
-//    }
-//
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response getAll(@Context SecurityContext securityContext) {
-//        if (securityContext.isUserInRole(String.valueOf(PermissionType.BUG_MANAGEMENT))) {
-//            return Response.status(200).entity(facade.getAll()).build();
+public class BugControllerImpl {
+
+    @Autowired
+    private BugService bugService;
+
+    @PostMapping(path = "/jbugs/jbugs-api/bugs",
+            consumes = javax.ws.rs.core.MediaType.APPLICATION_JSON,
+            produces = javax.ws.rs.core.MediaType.APPLICATION_JSON)
+    public ResponseEntity<BugDataModel> createBug(@Context SecurityContext securityContext, @RequestBody BugDataModel input) {
+
+        //        if (securityContext.isUserInRole(String.valueOf(PermissionEnum.BUG_MANAGEMENT))) {
+            BugDataModel response = bugService.createBug(input);
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
 //        } else {
-//            return Response.status(Response.Status.FORBIDDEN).entity(MessageCatalog.PERMISSION_NOT_FOUND).build();
-//
+//            return new ResponseEntity<>(new BugDataModel(), HttpStatus.UNAUTHORIZED);
 //        }
-//    }
-//
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("/status-limited/{status}")
-//    @GET
-//    public Response getStatusLimited(@Context SecurityContext securityContext, @PathParam("status") String status) {
-//        if (securityContext.isUserInRole(String.valueOf(PermissionType.BUG_MANAGEMENT))) {
-//            return Response.ok(facade.getStatusBugLimited(status)).build();
-//        } else
-//            return Response.status(Response.Status.FORBIDDEN).entity(MessageCatalog.PERMISSION_NOT_FOUND).build();
-//    }
-//
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("/status-all/{status}")
-//    @GET
-//    public Response getStatusAll(@Context SecurityContext securityContext, @PathParam("status") String status) {
-//        if (securityContext.isUserInRole(String.valueOf(PermissionType.BUG_CLOSE))) {
-//            return Response.ok(facade.getStatusBugComplete(status)).build();
-//        } else
-//            return Response.status(Response.Status.FORBIDDEN).entity(MessageCatalog.PERMISSION_NOT_FOUND).build();
-//    }
-//    @Produces(MediaType.APPLICATION_JSON)
-//
-//    @Path("/statistics")
-//    @GET
-//    public Response getStatistics(@Context SecurityContext securityContext) {
-//        if (securityContext.isUserInRole(String.valueOf(PermissionType.BUG_MANAGEMENT))) {
-//            return Response.ok(facade.getStatistics()).build();
-//        } else
-//            return Response.status(Response.Status.FORBIDDEN).entity(MessageCatalog.PERMISSION_NOT_FOUND).build();
-//    }
+    }
+
+    @GetMapping(path = "/jbugs/jbugs-api/bugs")
+    public ResponseEntity getAll(@Context SecurityContext securityContext) {
+//        if (securityContext.isUserInRole(String.valueOf(PermissionEnum.BUG_MANAGEMENT))) {
+
+            List<BugDataModel> response = bugService.getAllBugs();
+            return new ResponseEntity<>(response, HttpStatus.OK);
+//        } else {
+//            return new ResponseEntity<>(new BugDataModel(), HttpStatus.UNAUTHORIZED);
+//        }
+    }
 
 }
