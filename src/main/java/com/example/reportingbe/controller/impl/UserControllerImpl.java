@@ -37,7 +37,7 @@ public class UserControllerImpl {
     public ResponseEntity<String> createUser(@RequestBody UserDataModel user) {
 
         String response = userService.createUser(user);
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

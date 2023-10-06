@@ -62,12 +62,8 @@ public class User extends BaseEntity<Long> {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "counter")
-    private int counter;
-
     @Column(name = "status")
     private int status;
-
 
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "users_roles",

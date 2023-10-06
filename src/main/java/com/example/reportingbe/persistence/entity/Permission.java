@@ -1,5 +1,7 @@
 package com.example.reportingbe.persistence.entity;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.Objects;
                 query = "select p from Permission p where p.id= :" + Permission.INPUT_ID),
         @NamedQuery(name = Permission.PERMISSION_FIND_ALL, query = "SELECT p from Permission p"),
 })
+@Getter
 public class Permission extends BaseEntity<Long> {
 
     public static final String INPUT_ID = "id";

@@ -9,6 +9,7 @@ import com.example.reportingbe.core.service.UserService;
 import com.example.reportingbe.core.utils.MessageCatalog;
 import com.example.reportingbe.core.utils.exceptions.BusinessWebAppException;
 import com.example.reportingbe.persistence.dao.impl.UserDaoImpl;
+import com.example.reportingbe.persistence.entity.Permission;
 import com.example.reportingbe.persistence.entity.Role;
 import com.example.reportingbe.persistence.entity.User;
 import ma.glasnost.orika.MapperFacade;
@@ -17,9 +18,7 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -77,25 +76,24 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserLoginOutputDatenModel authenticateUser(UserLoginDataModel user) {
 
-        String[] permissions = {"USER_MANAGEMENT", "BUG_MANAGEMENT"};
         User result = userDao.getUserByUsername(user.getUsername());
 
-        if (user != null) {
+        if (result != null) {
 
-            //            Set<Permission> permissions = new HashSet<>();
-//            for (Role roleEntity : user.getRoles()) {
-//                for (PermissionEntity permissionEntity : roleEntity.getPermissions()) {po
-//                    permissions.add(permissionEntity);
-//                }
-//            }
+            List<Permission> permissions = new ArrayList<>();
+            for (Role roleEntity : result.getRoles()) {
+                permissions.addAll(roleEntity.getPermissions());
+            }
+
+            permissions.stream().map(Permission::getType).toArray(String[]::new);
             Algorithm algorithm = Algorithm.HMAC256("harambe");
             String jwt = JWT.create().withIssuer("auth0")
                     .withClaim("id", result.getId())
                     .withClaim("username", user.getUsername())
-                    .withArrayClaim("permissions", permissions)
+                    .withArrayClaim("permissions", permissions.stream().map(Permission::getType).toArray(String[]::new))
                     .sign(algorithm);
 
-            ArrayList<String> permissionsAsList = new ArrayList<>(Arrays.asList(permissions));
+            ArrayList<String> permissionsAsList = permissions.stream().map(Permission::getType).collect(Collectors.toCollection(ArrayList::new));
 
 
             return new UserLoginOutputDatenModel(result.getEmail(), result.getUsername(), permissionsAsList, jwt);
