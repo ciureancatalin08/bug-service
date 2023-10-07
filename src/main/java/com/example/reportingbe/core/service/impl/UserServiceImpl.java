@@ -133,7 +133,6 @@ public class UserServiceImpl implements UserService {
         user.setLastName(userDataModel.getLastName());
         user.setEmail(userDataModel.getEmail());
         user.setMobileNumber(userDataModel.getMobileNumber());
-        user.setRoles(new ArrayList<>());
 
         if (userDataModel.getRoles() != null && !userDataModel.getRoles().isEmpty()) {
             user.getRoles().addAll(
