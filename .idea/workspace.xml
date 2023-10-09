@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25df6dd7-1d4a-4a39-adfb-78be32cb1fa3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/datamodel/PermissionDataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/datamodel/RolePermissionDataModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/impl/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/impl/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/RoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/RoleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/impl/RoleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/dao/impl/RoleDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/persistence/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/controller/impl/UserControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/controller/impl/UserControllerImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/core/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/core/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/Permission.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/Permission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +125,7 @@
       <workItem from="1674563896795" duration="12458000" />
       <workItem from="1674922895792" duration="832000" />
       <workItem from="1675439456857" duration="30249000" />
-      <workItem from="1696265045502" duration="13451000" />
+      <workItem from="1696265045502" duration="30886000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674911015556</created>
@@ -159,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696588912651</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="user creation fixed">
+      <option name="closed" value="true" />
+      <created>1696670787282</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696670787282</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +212,15 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/impl/BugControllerImpl.java</url>
           <line>33</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/RoleService.java</url>
+          <line>19</line>
+          <properties class="com.example.reportingbe.core.service.RoleService" method="getPermissionsNotFromRole">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

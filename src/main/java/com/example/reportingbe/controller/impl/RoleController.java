@@ -1,13 +1,12 @@
 package com.example.reportingbe.controller.impl;
 
-import com.example.reportingbe.controller.datamodel.UserDataModel;
+import com.example.reportingbe.controller.datamodel.PermissionDataModel;
+import com.example.reportingbe.controller.datamodel.RolePermissionDataModel;
 import com.example.reportingbe.core.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,10 +17,28 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
-    @GetMapping("/types")
-    public ResponseEntity<List<String>> getAllUsers() {
+    @GetMapping()
+    public ResponseEntity<List<RolePermissionDataModel>> getAllRollesAndLinkedPermissions() {
 
-        List<String> roles = roleService.getAllRoles();
+        List<RolePermissionDataModel> roles = roleService.getAllRolesAndLinkedPermissions();
         return new ResponseEntity<>(roles, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{roleId}/{permissionId}")
+    public void deletePermissionFromRole(@PathVariable long roleId, @PathVariable long permissionId) {
+
+        roleService.deletePermissionFromRole(roleId, permissionId);
+    }
+
+    @GetMapping("/permissionsByRole/{roleId}")
+    public List<PermissionDataModel> getPermissionNotFromRole(@PathVariable long roleId) {
+
+        return roleService.getPermissionsNotFromRole(roleId);
+    }
+
+    @PutMapping("/{roleId}/{permissionId}")
+    public void addPermissionToRole(@PathVariable long roleId, @PathVariable long permissionId) {
+
+        roleService.addPermissionToRole(roleId, permissionId);
     }
 }

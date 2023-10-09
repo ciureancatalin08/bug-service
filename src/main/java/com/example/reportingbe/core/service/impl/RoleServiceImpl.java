@@ -3,14 +3,20 @@
 // =================================================================================================
 package com.example.reportingbe.core.service.impl;
 
+import com.example.reportingbe.controller.datamodel.PermissionDataModel;
+import com.example.reportingbe.controller.datamodel.RolePermissionDataModel;
 import com.example.reportingbe.core.service.RoleService;
 import com.example.reportingbe.persistence.dao.PermissionDao;
 import com.example.reportingbe.persistence.dao.RoleDao;
+import com.example.reportingbe.persistence.entity.Permission;
 import com.example.reportingbe.persistence.entity.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -18,6 +24,9 @@ public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private RoleDao roleDao;
+
+    @Autowired
+    private EntityManager entityManager;
 
 //    @EJB
 //    private RoleConverter roleConverter;
@@ -40,5 +49,48 @@ public class RoleServiceImpl implements RoleService {
     public List<String> getAllRoles() {
 
         return roleDao.getAllRoles();
+    }
+
+    @Override
+    public List<RolePermissionDataModel> getAllRolesAndLinkedPermissions() {
+
+        List<Role> roles = roleDao.getAllRolesAndLinkedPermissions();
+
+        return roles.stream().map(this::mapRolesAndpermissions).collect(Collectors.toList());
+    }
+
+
+    @Override
+    @Transactional
+    public void deletePermissionFromRole(long roleId, long permissionId) {
+        Role role = entityManager.find(Role.class, roleId);
+        Permission permission = entityManager.find(Permission.class, permissionId);
+        role.getPermissions().remove(permission);
+        entityManager.flush();
+    }
+
+    private RolePermissionDataModel mapRolesAndpermissions(Role role) {
+        RolePermissionDataModel rolePermissionDataModel = new RolePermissionDataModel();
+        rolePermissionDataModel.setName(role.getType());
+        rolePermissionDataModel.setRoleId(role.getId());
+        rolePermissionDataModel.setPermissions(role.getPermissions().stream().map(permission -> {
+            PermissionDataModel permissionDataModel = new PermissionDataModel();
+            permissionDataModel.setId(permission.getId());
+            permissionDataModel.setName(permission.getType());
+            return permissionDataModel;
+        }).collect(Collectors.toList()));
+
+        return rolePermissionDataModel;
+    }
+
+    @Override
+    public List<PermissionDataModel> getPermissionsNotFromRole(long roleId) {
+        return roleDao.getPermissionsNotFromRole(roleId);
+    }
+
+    @Override
+    @Transactional
+    public void addPermissionToRole(long roleId, long permissionId) {
+        roleDao.addPermissionToRole(roleId, permissionId);
     }
 }
