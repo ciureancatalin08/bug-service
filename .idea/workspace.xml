@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25df6dd7-1d4a-4a39-adfb-78be32cb1fa3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/impl/NotificationControllerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/impl/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/controller/impl/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/NotificationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/BugServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/BugServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/NotificationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/reportingbe/core/utils/NotificationType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/controller/impl/NotificationControllerImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/reportingbe/persistence/entity/Role.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +51,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Catalin Ciurean/IdeaProjects/user-service&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -69,13 +60,14 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;e613b57026169672fe84b884bed0af04&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Catalin Ciurean\IdeaProjects" />
       <recent name="C:\Users\Catalin Ciurean\Desktop\reporting-be\src\main\java\com\example\reportingbe\core\utils" />
       <recent name="C:\Users\Catalin Ciurean\Desktop\reporting-be\src\main\java\com\example\reportingbe\persistence\entity" />
       <recent name="C:\Users\Catalin Ciurean\Desktop\reporting-be\src\main\java\com\example\reportingbe\controller\impl" />
@@ -128,7 +120,11 @@
       <workItem from="1675439456857" duration="30249000" />
       <workItem from="1696265045502" duration="31694000" />
       <workItem from="1701430387465" duration="2466000" />
-      <workItem from="1701512559221" duration="1603000" />
+      <workItem from="1701512559221" duration="2358000" />
+      <workItem from="1701612504438" duration="239000" />
+      <workItem from="1701612758931" duration="21000" />
+      <workItem from="1701612947534" duration="152000" />
+      <workItem from="1701613118132" duration="162000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674911015556</created>
@@ -182,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696869428821</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="permission fixed">
+      <option name="closed" value="true" />
+      <created>1701606067281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701606067281</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

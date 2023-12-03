@@ -53,6 +53,4 @@ public class Role extends BaseEntity<Long> {
             inverseJoinColumns = @JoinColumn(name = "permission_id", referencedColumnName = "id", nullable = false)
     )
     private List<Permission> permissions = new ArrayList<>();
-
-
 }
