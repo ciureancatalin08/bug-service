@@ -29,11 +29,6 @@ public class BugServiceImpl implements BugService {
     @Autowired
     private BugConverter bugConverter;
 
-    @Autowired
-    private UserDao userDao;
-
-    private MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
-
     @Override
     public BugDataModel createBug(BugDataModel bugDataModel) {
 
@@ -50,7 +45,6 @@ public class BugServiceImpl implements BugService {
 
     @Override
     public List<BugDataModel> getAllBugs() {
-
 
         return bugDao.getAll()
                 .stream()

@@ -36,6 +36,13 @@ public class RoleController {
         return roleService.getPermissionsNotFromRole(roleId);
     }
 
+    @GetMapping("/allRoles")
+    public ResponseEntity<List<String>> getAllUsers() {
+
+        List<String> roles = roleService.getAllRoles();
+        return new ResponseEntity<>(roles, HttpStatus.OK);
+    }
+
     @PutMapping("/{roleId}/{permissionId}")
     public void addPermissionToRole(@PathVariable long roleId, @PathVariable long permissionId) {
 

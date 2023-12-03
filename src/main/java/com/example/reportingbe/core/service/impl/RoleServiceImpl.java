@@ -28,15 +28,6 @@ public class RoleServiceImpl implements RoleService {
     @Autowired
     private EntityManager entityManager;
 
-//    @EJB
-//    private RoleConverter roleConverter;
-//    @EJB
-//    private PermissionFacade permissionFacade;
-//    @EJB
-//    private PermissionConverter permissionConverter;
-
-    @Autowired
-    private PermissionDao permissionDao;
 
     @Override
     public List<Role> getRolesByTypeList(List<String> typeList) {

@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -51,12 +50,6 @@ public class UserServiceImpl implements UserService {
 
         try {
             userDao.createUser(newUser);
-//            final long id = userDao.getUserByUsername(userDataModel.getEmail()).getId();
-//            final String userFullName = newUserEntity.getFirstName() + " " + newUserEntity.getLastName();
-//            this.computationService.sendMail(newUserEntity.getEmail(), newUserEntity.getFirstName(), newUserEntity.getUsername(), newUserEntity.getPassword());
-//            this.notificationFacade.createNotification(
-//                    NotificationType.WELCOME_NEW_USER,
-//                    new NotificationParamsWelcomeUser(userFullName, newUserEntity.getUsername()), id);
         } catch (Exception e) {
             throw new BusinessWebAppException(MessageCatalog.USER_INVALID_PATTERN, 400);
         }
@@ -98,10 +91,6 @@ public class UserServiceImpl implements UserService {
 
             return new UserLoginOutputDatenModel(result.getEmail(), result.getUsername(), permissionsAsList, jwt);
 
-//        } else {
-//            throw new BusinessException(MessageCatalog.USER_INVALID_USERNAME_OR_PASSWORD);
-//        }
-
         }
 
         return null;
@@ -138,7 +127,6 @@ public class UserServiceImpl implements UserService {
             user.getRoles().addAll(
                     roleService.getRolesByTypeList(userDataModel.getRoles()));
         }
-
         return user;
     }
 }
