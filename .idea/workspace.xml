@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25df6dd7-1d4a-4a39-adfb-78be32cb1fa3" name="Default Changelist" comment="">
+    <list default="true" id="25df6dd7-1d4a-4a39-adfb-78be32cb1fa3" name="Default Changelist" comment="permission fixed">
+      <change beforePath="$PROJECT_DIR$/../disertatie-fe/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../disertatie-fe/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../disertatie-fe/reporting-fe/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../disertatie-fe/reporting-fe/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +33,19 @@
         <option value="c" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../role-service" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -42,36 +57,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Catalin Ciurean/IdeaProjects/user-service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e613b57026169672fe84b884bed0af04&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Catalin Ciurean/IdeaProjects/role-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.protractor.protractor_package": "C:/Users/Catalin Ciurean/IdeaProjects/disertatie-fe/reporting-fe/node_modules/protractor",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "401d461de8ef2c6fb9276c9829dbe79a",
+    "ts.external.directory.path": "C:\\Users\\Catalin Ciurean\\IdeaProjects\\disertatie-fe\\reporting-fe\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Catalin Ciurean\IdeaProjects\role-service" />
       <recent name="C:\Users\Catalin Ciurean\IdeaProjects" />
       <recent name="C:\Users\Catalin Ciurean\Desktop\reporting-be\src\main\java\com\example\reportingbe\core\utils" />
       <recent name="C:\Users\Catalin Ciurean\Desktop\reporting-be\src\main\java\com\example\reportingbe\persistence\entity" />
       <recent name="C:\Users\Catalin Ciurean\Desktop\reporting-be\src\main\java\com\example\reportingbe\controller\impl" />
-      <recent name="C:\Users\Catalin Ciurean\Desktop\reporting-be\src\main\java\com\example\reportingbe\controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.reportingbe.persistence.dao.impl" />
@@ -81,14 +99,121 @@
       <recent name="com.example.reportingbe.core.service" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="ReportingBeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RoleService (1)">
+    <configuration name="Tests (jbugs-web)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/../disertatie-fe/reporting-fe/src/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/../disertatie-fe/reporting-fe/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$/../disertatie-fe/reporting-fe" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (jbugs-web-e2e)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/../disertatie-fe/reporting-fe/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/../disertatie-fe/reporting-fe/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="disertatie-fe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="disertatie-fe" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BugService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="bug-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.bugservice.BugService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.bugservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReportingBeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="reporting-be" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.reportingbe.ReportingBeApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RoleService (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="role-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.roleservice.RoleService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="role-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.reportingbe.RoleService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserService (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.userservice.UserService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.reportingbe.UserService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/../disertatie-fe/reporting-fe/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="Karma.Tests (jbugs-web)" />
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="Protractor.E2E Tests (jbugs-web-e2e)" />
+      <item itemvalue="Spring Boot.ReportingBeApplication" />
+      <item itemvalue="Spring Boot.UserService (1)" />
+      <item itemvalue="Spring Boot.RoleService" />
+      <item itemvalue="Spring Boot.RoleService (1)" />
+      <item itemvalue="Spring Boot.UserService" />
+      <item itemvalue="Spring Boot.BugService" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BugService" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -125,6 +250,14 @@
       <workItem from="1701612758931" duration="21000" />
       <workItem from="1701612947534" duration="152000" />
       <workItem from="1701613118132" duration="162000" />
+      <workItem from="1701624616387" duration="259000" />
+      <workItem from="1701625087296" duration="3921000" />
+      <workItem from="1701631797244" duration="32000" />
+      <workItem from="1701631918554" duration="465000" />
+      <workItem from="1701632408035" duration="537000" />
+      <workItem from="1701633213025" duration="255000" />
+      <workItem from="1701633524996" duration="231000" />
+      <workItem from="1701634136207" duration="754000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1674911015556</created>
@@ -186,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701606067281</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="permission fixed">
+      <option name="closed" value="true" />
+      <created>1701624712666</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701624712666</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

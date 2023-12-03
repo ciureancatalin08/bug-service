@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/reporting-be.iml" filepath="$PROJECT_DIR$/reporting-be.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../disertatie-fe/disertatie-fe.iml" filepath="$PROJECT_DIR$/../disertatie-fe/disertatie-fe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../role-service/role-service.iml" filepath="$PROJECT_DIR$/../role-service/role-service.iml" />
     </modules>
   </component>
 </project>
