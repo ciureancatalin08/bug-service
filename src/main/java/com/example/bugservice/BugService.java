@@ -8,6 +8,7 @@ public class BugService {
 
 	public static void main(String[] args) {
 
+		System.out.println("bugService");
 		SpringApplication.run(BugService.class, args);
 	}
 }
