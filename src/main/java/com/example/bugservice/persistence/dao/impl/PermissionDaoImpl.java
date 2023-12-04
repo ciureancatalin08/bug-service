@@ -5,11 +5,9 @@ package com.example.bugservice.persistence.dao.impl;
 
 import com.example.bugservice.persistence.dao.PermissionDao;
 import com.example.bugservice.persistence.entity.Permission;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 
 @Repository
 public class PermissionDaoImpl implements PermissionDao {

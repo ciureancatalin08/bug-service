@@ -1,8 +1,7 @@
 package com.example.bugservice.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Getter;
-
-import javax.persistence.*;
 
 
 @Entity

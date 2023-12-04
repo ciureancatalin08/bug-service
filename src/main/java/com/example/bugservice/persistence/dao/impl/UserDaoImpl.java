@@ -3,11 +3,12 @@ package com.example.bugservice.persistence.dao.impl;
 
 import com.example.bugservice.persistence.dao.UserDao;
 import com.example.bugservice.persistence.entity.User;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
+
 import java.util.List;
 
 @Repository

@@ -9,11 +9,12 @@ import com.example.bugservice.core.service.RoleService;
 import com.example.bugservice.persistence.dao.RoleDao;
 import com.example.bugservice.persistence.entity.Permission;
 import com.example.bugservice.persistence.entity.Role;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
