@@ -7,7 +7,7 @@ services:
     build:
       dockerfile: Dockerfile
     ports:
-      - "8180:8181" # Forward the exposed port 8080 on the container to port 8081 on the host machine
+      - "8181:8181" # Forward the exposed port 8080 on the container to port 8081 on the host machine
     restart: always
     depends_on:
       - mysql # This service depends on mysql. Start that first.
