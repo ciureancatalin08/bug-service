@@ -2,6 +2,7 @@ package com.example.bugservice.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
@@ -12,6 +13,7 @@ import lombok.Getter;
         @NamedQuery(name = Permission.PERMISSION_FIND_ALL, query = "SELECT p from Permission p"),
 })
 @Getter
+@Setter
 public class Permission extends BaseEntity<Long> {
 
     public static final String INPUT_ID = "id";

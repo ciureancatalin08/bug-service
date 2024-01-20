@@ -12,6 +12,8 @@ import com.example.bugservice.persistence.entity.User;
 import com.example.bugservice.core.service.UserService;
 import com.example.bugservice.core.utils.MessageCatalog;
 import com.example.bugservice.core.utils.exceptions.BusinessWebAppException;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
@@ -23,6 +25,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    @PersistenceContext
+    private EntityManager em;
 
     @Autowired
     private UserDaoImpl userDao;
@@ -133,4 +138,5 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
+
 }
