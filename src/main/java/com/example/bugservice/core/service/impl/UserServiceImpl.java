@@ -101,14 +101,18 @@ public class UserServiceImpl implements UserService {
     public List<UserDataModel> getAllUsers() {
 
         mapperFactory.classMap(User.class, UserDataModel.class);
-        MapperFacade mapper = mapperFactory.getMapperFacade();
 
         List<UserDataModel> usersDataModel = new ArrayList<>();
         List<User> users = userDao.getAll();
 
         for (User user : users) {
 
-            UserDataModel userDataModel = mapper.map(user, UserDataModel.class);
+            UserDataModel userDataModel = new UserDataModel();
+            userDataModel.setFirstName(user.getFirstName());
+            userDataModel.setLastName(user.getLastName());
+            userDataModel.setEmail(user.getEmail());
+            userDataModel.setMobileNumber(user.getMobileNumber());
+            userDataModel.setUserName(user.getUsername());
             userDataModel.setRoles(user.getRoles().stream().map(Role::getType).collect(Collectors.toList()));
             usersDataModel.add(userDataModel);
         }
