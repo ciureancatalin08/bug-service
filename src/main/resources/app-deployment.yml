@@ -1,58 +1,90 @@
-kind: Service
-apiVersion: v1
-metadata:
-  name: bug-service
-  labels:
-    name: bug-service
-spec:
-  ports:
-    - nodePort: 30163
-      port: 8080
-      targetPort: 8080
-      protocol: TCP
-  selector:
-    app: bug-service
-  type: NodePort
-
 ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: bug-service
-spec:
-  selector:
-    matchLabels:
-      app: bug-service
-  replicas: 3
-  template:
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: v1
+    kind: Service
     metadata:
       labels:
         app: bug-service
+        version: 5.0.0
+      name: bug-service
     spec:
-      containers:
-        - name: bug-service
-          image: bug-service-bug-service
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 8080
-          env:   # Setting Enviornmental Variables
-            - name: DB_HOST   # Setting Database host address from configMap
-              valueFrom:
-                configMapKeyRef:
-                  name: db-conf  # name of configMap
-                  key: host
-            - name: DB_NAME  # Setting Database name from configMap
-              valueFrom:
-                configMapKeyRef:
-                  name: db-conf
-                  key: name
-            - name: DB_USERNAME  # Setting Database username from Secret
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials # Secret Name
-                  key: username
-            - name: DB_PASSWORD # Setting Database password from Secret
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: password
+      ports:
+        - name: http
+          port: 8080
+          protocol: TCP
+          targetPort: 8080
+          nodePort: 31371
+      type: NodePort
+      selector:
+        app: bug-service
+
+
+  - apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      name: bug-service
+      labels:
+        account: bug-service
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      labels:
+        app: bug-service
+        version: 5.0.0
+      name: bug-service
+    spec:
+      selector:
+        matchLabels:
+          app: bug-service
+      template:
+        metadata:
+          labels:
+            app: bug-service
+            version: 5.0.0
+        spec:
+          serviceAccountName: bug-service
+          containers:
+            - name: bug-service
+              image: bug-service-bug-service
+              imagePullPolicy: IfNotPresent
+              resources:
+                limits:
+                  memory: "1Gi"
+                  cpu: "1"
+                requests:
+                  memory: "100Mi"
+                  cpu: "100m"
+              ports:
+                - containerPort: 8080
+                  name: http
+                  protocol: TCP
+              env:
+                - name: SPRING_PROFILES_ACTIVE
+                  value: k8s
+                - name: SPRING_DATASOURCE_URL
+                  valueFrom:
+                    configMapKeyRef:
+                      name: mysql-config
+                      key: MYSQL_DATABASE_URL
+                - name: SPRING_DATASOURCE_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: mysql-secret
+                      key: MYSQL_USER
+                - name: SPRING_DATASOURCE_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: mysql-secret
+                      key: MYSQL_PASSWORD
+              securityContext:
+                # runAsUser: 1000
+                # readOnlyRootFilesystem: true
+                allowPrivilegeEscalation: false
+              livenessProbe:
+                httpGet:
+                  path: /api/v1/actuator/health
+                  port: 8080
+                initialDelaySeconds: 15
+                periodSeconds: 5
