@@ -41,14 +41,14 @@ spec:
         app: mysql
     spec:
       containers:
-        - image: mysql:8
+        - image: mysql:latest
           name: mysql
           resources:
             limits:
-              memory: "1Gi"
+              memory: "2Gi"
               cpu: "1"
             requests:
-              memory: "500Mi"
+              memory: "1Gi"
               cpu: "500m"
           env:
             - name: MYSQL_DATABASE
@@ -95,3 +95,5 @@ data:
   MYSQL_DATABASE: "reporting"
   MYSQL_DATABASE_URL: "jdbc:mysql://mysql/reporting"
 
+  initdb.sql: |
+    use reporting;

@@ -51,11 +51,11 @@ items:
               imagePullPolicy: IfNotPresent
               resources:
                 limits:
-                  memory: "1Gi"
+                  memory: "2Gi"
                   cpu: "1"
                 requests:
-                  memory: "100Mi"
-                  cpu: "100m"
+                  memory: "1Gi"
+                  cpu: "300m"
               ports:
                 - containerPort: 8080
                   name: http
@@ -82,9 +82,4 @@ items:
                 # runAsUser: 1000
                 # readOnlyRootFilesystem: true
                 allowPrivilegeEscalation: false
-              livenessProbe:
-                httpGet:
-                  path: /api/v1/actuator/health
-                  port: 8080
-                initialDelaySeconds: 15
-                periodSeconds: 5
+
