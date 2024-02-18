@@ -30,9 +30,11 @@ items:
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
+
       labels:
         app: bug-service
         version: 5.0.0
+
       name: bug-service
     spec:
       selector:
